@@ -1,0 +1,54 @@
+﻿/* ---------------------------- */
+/*		    Responsive  		*/
+/* ---------------------------- */
+
+
+@media screen and (max-width: 959px) {
+    img { max-width: 100% }
+    .container { width:100%; }
+    .grid_1 { /*width:100%;*/ }
+}
+
+@media screen and (max-width: 999px) {
+
+}
+
+@media screen and (max-width: 780px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (max-width: 740px) {
+
+}
+
+@media screen and (max-width: 640px) {
+
+}
+
+@media screen and (max-width: 509px) {
+    
+}
+
+@media screen and (max-width: 480px) {
+    
+}
+
+@media screen and (max-width: 479px) {
+    
+}
+
+@media screen and (max-width: 380px) {
+
+}
+
+@media screen and (max-width: 320px) {
+     
+}

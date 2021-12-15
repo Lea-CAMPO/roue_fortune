@@ -1,0 +1,7 @@
+{
+  "type":"module",
+  "dependencies": {
+    "gsap": "^3.8.0"
+  }
+
+}

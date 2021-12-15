@@ -1,0 +1,92 @@
+/* ---------------------------- */
+/*			Stylebase			*/
+/* ---------------------------- */
+
+/*
+ * @autor : dynamic creative
+ * @date : 2016
+ */
+
+/* structure */
+html { font-size: 100%; height:100%; }
+body { height:100%; font-family: 'Open Sans', sans-serif;  color: #272727; background:#fff;margin:0; padding:0; line-height:1.2; font-size:16px;}
+button { font-family: 'Open Sans', sans-serif; }
+
+/* introducing new HTML5 elements */
+header, footer, section, hgroup, aside, nav, article, figure, figcaption, time, dialog { display: block; }
+
+/* titre */
+h1, h2, h3, h4, h5, h6 { font-weight:normal; margin:0; padding:0; vertical-align: baseline; outline: none; }
+
+/* link */
+a { text-decoration:none; }
+a, a:visited { color: #272727; } 
+a img { border: 0; } /* @note : no borders on image-links */
+a:hover img, a:focus img, a:active img, button:hover { opacity: 0.9; }
+*:focus {outline: none;}
+
+/* listes */ 
+ul, ol { margin: 0; padding: 0; list-style:none; } 
+
+/* paragraphes */ 
+p { margin: 0; } 
+
+/* forms */
+label, button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; }
+
+/* overflows */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+table, td, blockquote, code, pre, textarea, /*input,*/ object, embed, video { max-width: 100% }
+code, pre, samp, textarea, table, td { word-wrap: break-word; white-space: pre-wrap; }
+
+/* misc */
+abbr[title] { border-bottom: 1px solid #555555; cursor: help; }
+table { table-layout: fixed; border-spacing: 0; }
+th, caption { text-align:left; }
+img {margin:0; vertical-align: middle;}
+button::-moz-focus-inner { padding:0; border:0; }
+
+
+.clear { clear: both; }
+.center { text-align: center; }
+.t_right { text-align: right; }
+.t_just { text-align:justify; }
+.left { float:left; }
+.right { float:right; }
+.semi {font-weight:600;}
+
+::-webkit-input-placeholder { color:#54585a; }
+::-moz-placeholder { color:#54585a; opacity:1; } /* firefox 19+ */
+:-ms-input-placeholder { color:#54585a; } /* ie */
+input:-moz-placeholder { color:#54585a; opacity:1;}
+
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+/* padding, border*/
+*,*:after,*:before {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+
+b, strong { font-weight: bold; }
+
+/*iOS buttons � remove rounded corners*/
+input, textarea, select {
+-webkit-appearance: none;
+-webkit-border-radius: 0;
+}
+
+/*règles CSS à une portion du document qui a été sélectionnée par l'utilisateur*/
+::-moz-selection { background: #F9A386; color: #fff; text-shadow: none; }
+::selection { background: #F9A386; color: #fff; text-shadow: none; }
+
+/*custom scrollbar chrome*/
+::-webkit-scrollbar {width: 8px; height:8px; }
+::-webkit-scrollbar-track {background: #FFFFFF;-webkit-box-shadow: inset 1px 1px 2px #E0E0E0;border: 1px solid #D8D8D8;}
+::-webkit-scrollbar-thumb {background: #F88C00;-webkit-box-shadow: inset 1px 1px 2px rgba(155, 155, 155, 0.4);}
+::-webkit-scrollbar-thumb:hover {-webkit-box-shadow: inset 1px 1px 10px rgba(0,0,0,0.3);}
+::-webkit-scrollbar-thumb:active {background: #888;-webkit-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.3);}
