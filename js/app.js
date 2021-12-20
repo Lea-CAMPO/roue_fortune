@@ -1,48 +1,79 @@
-let compteur = 0;
-const display = document.querySelector('.display');
-  
-function spinTheWheel() {
+/***************************** */
+/* Initialisation des variables */
+/***************************** */
 
-    let arc = 360 / 6;
+/* Compteur, roue et display */
+let compteur = 0; /* S'incrémente à chaque tour de roue */
+const display = document.querySelector(".display");
+const wheel = document.getElementById("wheel-face");
+const zoneSize = 30;
 
-    /* Génération de l'angle de la roue (valeur aléatoire) */
-    let deg = Math.floor(5000 + Math.random() *5000);
-    let actualDeg = deg %360;
-    let zoneSize= 45;
-   
-    /* Définition de l'animation de la roue */
+/* Tableau des segments de la roue */
 
-    const wheel = document.getElementsByClassName("roue");
-    let spinAnimation = gsap.to(wheel, {duration: 5, rotation: deg, ease:"bounce"});
-    spinAnimation.pause();
+let symbolSegments = [
+  "Bag ???",
+  "Today's Deal",
+  "Today's Deal",
+  "Free samples",
+  "Free samples",
+  "100$",
+  "100$",
+  "Amazing coupon",
+  "Amazing coupon",
+  "Gift card",
+  "Gift card",
+  "Bag ???",
+];
 
-    let symbolSegments = {
-        1:"Today's deal",
-        2:"Free samples",
-        3:"100$",
-        4:"Bag ???",
-        5:"Amazon coupon",
-        6:"Gift card",
-    };
+/* Écoute du clic */
+const buttonSpin = document.getElementById("button-spin");
+buttonSpin.addEventListener("click", spinTheWheel);
 
-    const handleWin = (actualDeg) => {
-        const winningSymbolNr = Math.ceil(actualDeg / zoneSize);
-        display.innerHTML = symbolSegments[winningSymbolNr];
-      }
+/***************************** */
+/* Fonctions */
+/*************/
 
-      handleWin(actualDeg);
+/* Fonction de calcul de l'angle pour récupérer le segment du haut */
 
-    if (compteur < 3) {
-        
-        spinAnimation.play(0);
-        compteur ++;
-    }
-
-    else {
-        alert("Vous ne pouvez plus jouer")
-    }
+function handleWin(actualDeg) {
+  const winningSymbolNr = Math.floor(actualDeg / zoneSize);
+  display.innerHTML = symbolSegments[winningSymbolNr];
 }
 
-const buttonSpin = document.getElementById("button-spin");
+/* Fonction d'animation de la roue déclenchée au clic */
 
-buttonSpin.addEventListener('click', spinTheWheel);
+function spinTheWheel() {
+  /* Génération de l'angle de la roue (valeur aléatoire) */
+  let deg = Math.floor(1080 + Math.random() * 3600);
+  let actualDeg = deg % 360;
+
+  handleWin(actualDeg);
+
+  let spinAnimation = gsap.to(wheel, {
+    duration: 0,
+    rotation: 0,
+  });
+  spinAnimation.play(0);
+
+  /* Nombre de chances defini à 3 */
+  if (compteur < 3) {
+    /* Définition de l'animation de la roue */
+    let spinAnimation = gsap.to(wheel, {
+      duration: 5,
+      rotation: deg,
+      ease: "ease",
+    });
+    spinAnimation.play(0);
+    compteur++;
+
+    /* Tant que l'animation n'est pas finie, on ne peut pas la relancer */
+    buttonSpin.disabled = true;
+
+    setTimeout(() => {
+      buttonSpin.disabled = false;
+    }, 5000);
+  } else {
+    /* Au bout de trois fois, on ne peut plus jouer */
+    alert("Vous ne pouvez plus jouer");
+  }
+}
